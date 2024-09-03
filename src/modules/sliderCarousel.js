@@ -1,3 +1,15 @@
+import Swiper from 'swiper';
+
 export const sliderCarousel = () => {
-    console.log('sliderCarousel')
+    const swiper = new Swiper('.swiper', {
+        // Optional parameters
+        direction: 'vertical',
+        loop: true,
+
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
 }
