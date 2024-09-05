@@ -216,6 +216,7 @@ input.error {
 .phone {
   font-size: 24px;
   padding-top: 37px;
+  white-space: nowrap;
 }
 .phone a {
   color: inherit;
