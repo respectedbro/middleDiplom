@@ -216,6 +216,7 @@ input.error {
 .phone {
   font-size: 24px;
   padding-top: 37px;
+  white-space: nowrap;
 }
 .phone a {
   color: inherit;
@@ -539,7 +540,10 @@ input.error {
   position: relative;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
-  margin: 30px 20px 30px;
+  /*margin: 30px 20px 30px;*/
+}
+.row {
+  margin: 0;
 }
 .service-image img {
   border-top-left-radius: 10px;
@@ -1026,7 +1030,7 @@ p.services-image_mobile {
   width: 44px;
   height: 44px;
   border-radius: 10px;
-  background: #000 url("./dist/images/loading.gif") no-repeat 50% 50%;
+  background: #000 url("dist/images/loading.gif") no-repeat 50% 50%;
 }
 .box-modal {
   position: relative;
@@ -1191,6 +1195,13 @@ p.services-image_mobile {
   .contacts-cart {
     font-size: 18px;
   }
+  .service-image {
+    display: none;
+  }
+  .service-text {
+    margin-left: 0;
+    border-radius: 10px;
+  }
 }
 @media (max-width: 992px) {
   .countdown {
@@ -1302,6 +1313,9 @@ p.services-image_mobile {
   #benefits .col-md-4:last-child .col-sm-6:last-child .benefit-title {
     margin-bottom: 0;
   }
+  .service-text {
+    height: 300px;
+  }
   .document-inner {
     margin-bottom: 40px;
   }
@@ -1322,6 +1336,7 @@ p.services-image_mobile {
   .offer-heading {
     max-width: 75%;
   }
+
 }
 @media (max-width: 580px) {
   .service-image {
@@ -1330,6 +1345,7 @@ p.services-image_mobile {
   .service-text {
     margin-left: 0;
     border-radius: 10px;
+    height: 100%;
   }
   .offer-heading {
     width: 100%;
@@ -1599,7 +1615,6 @@ input.error {
 
 .benefits__item {
   width: 100%;
-  max-width: 185px;
 }
 
 .benefits-arrows {
@@ -1666,17 +1681,12 @@ input.error {
   transform: rotate(90deg);
 }
 
-@media (max-width: 575px) {
-    .swiper-horizontal {
-        touch-action: pan-y;
-        max-width: 180px;
-    }
+
+@media (min-width: 768px) {
+  .benefits-wrap {
+    width: 100%;
+
+  }
 }
 
 
-@media (min-width: 576px) {
-    .swiper-horizontal {
-        touch-action: pan-y;
-        max-width: 600px;
-    }
-}
