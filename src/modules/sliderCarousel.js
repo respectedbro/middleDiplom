@@ -2,11 +2,10 @@ import Swiper from 'swiper';
 import { Navigation } from 'swiper/modules';
 
 export const sliderCarousel = () => {
-    const swiper = new Swiper('.swiper', {
+    const swiper = new Swiper('.swiper-benefits', {
+
         modules: [Navigation],
         loop: true,
-        slidesPerView: 1,
-        spaceBetween: 10,
         navigation: {
             nextEl: '.benefits__arrow--right',
             prevEl: '.benefits__arrow--left',
@@ -14,12 +13,12 @@ export const sliderCarousel = () => {
         breakpoints: {
             576: {
                 slidesPerView: 1,
-                spaceBetween: 10,
+                spaceBetween: 20,
             },
 
-            768: {
+            1024: {
                 slidesPerView: 3,
-                spaceBetween: 65,
+                spaceBetween: 40,
             },
         },
     });
