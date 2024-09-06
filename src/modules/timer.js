@@ -4,6 +4,8 @@ export const timer = (deadline) => {
     const timerMinutes = document.querySelector('.count_3>span')
     const timerSeconds = document.querySelector('.count_4>span')
 
+    let timeout
+
     const getTimeRemaining = () => {
         let dateStop = new Date(deadline).getTime()
         let dateNow = new Date().getTime()
@@ -31,10 +33,15 @@ export const timer = (deadline) => {
         timerMinutes.textContent = addTimeZero(getTime.minutes)
         timerSeconds.textContent = addTimeZero(getTime.seconds)
 
-        if (getTime.timeRemaining > 0) {
-            setTimeout(updateClock, 1000)
-        }
+        if (getTime.timeRemaining < 0) {
+            timerDays.textContent = '00'
+            timerHours.textContent = '00'
+            timerMinutes.textContent = '00'
+            timerSeconds.textContent = '00'
+            clearTimeout(timeout)
 
+        }
+        timeout = setTimeout(updateClock, 1000)
     }
 
     updateClock()

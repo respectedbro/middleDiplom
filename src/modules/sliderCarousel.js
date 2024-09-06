@@ -16,7 +16,7 @@ export const sliderCarousel = () => {
                 spaceBetween: 20,
             },
 
-            1024: {
+            577: {
                 slidesPerView: 3,
                 spaceBetween: 40,
             },
