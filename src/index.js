@@ -6,12 +6,21 @@ import {timer} from "./modules/timer";
 import {applicationForm} from "./modules/applicationForm";
 import {certificate} from "./modules/certificate";
 import {scrollTop} from "./modules/scrollTop";
+import {calculator} from "./modules/calculator";
 
 modalHeader()
 sliderCarousel()
 sliderOurServices()
 modalServices()
 timer('10 september 2024')
-applicationForm()
+applicationForm({
+    elem: [
+        {
+            type: 'input',
+            id: 'calc-total'
+        }
+    ]
+})
 certificate()
 scrollTop()
+calculator(100)

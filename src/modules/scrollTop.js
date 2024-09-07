@@ -1,6 +1,6 @@
 export const scrollTop = () => {
     const scrollBtn = document.querySelector('.smooth-scroll')
-    const firstSection = document.getElementById('benefits')
+    const firstSection = document.querySelector('.scroll')
 
     const checkScroll = () => {
         const sectionBound = firstSection.getBoundingClientRect();
