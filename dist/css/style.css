@@ -789,10 +789,10 @@ p.services-image_mobile {
   background: url("./../images/zoom.png") no-repeat center
     rgba(79, 104, 110, 0.42);
   position: absolute;
-  width: 100%;
+  width: 50%;
   height: 100%;
   top: 0;
-  left: 0;
+  left: 98px;
   opacity: 0;
 }
 .document-inner:hover .document-overlay {

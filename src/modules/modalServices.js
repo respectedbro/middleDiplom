@@ -26,7 +26,7 @@ export const modalServices = () => {
                 modal.style.visibility = 'visible'
                 overlay.style.opacity = progress
                 overlay.style.visibility = 'visible'
-                overlay.style.zIndex = '999'
+                overlay.style.zIndex = '9'
             }
         });
     }

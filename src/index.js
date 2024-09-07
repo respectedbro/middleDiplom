@@ -4,7 +4,7 @@ import {sliderOurServices} from "./modules/sliderOurServices";
 import {modalServices} from "./modules/modalServices";
 import {timer} from "./modules/timer";
 import {applicationForm} from "./modules/applicationForm";
-import {certificate} from "./modules/certificate ";
+import {certificate} from "./modules/certificate";
 
 modalHeader()
 sliderCarousel()
