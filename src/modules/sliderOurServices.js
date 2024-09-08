@@ -1,5 +1,5 @@
 import Swiper from 'swiper';
-import { Navigation } from 'swiper/modules';
+import {Navigation} from 'swiper/modules';
 
 export const sliderOurServices = () => {
     const swiper = new Swiper('.swiper-services', {

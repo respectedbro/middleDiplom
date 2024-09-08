@@ -12,7 +12,6 @@ export const modalServices = () => {
     overlay.style.opacity = 0
     overlay.style.visibility = 'hidden'
 
-
     const animateOnModal = () => {
         modal.style.display = 'block';
         overlay.style.display = 'block';

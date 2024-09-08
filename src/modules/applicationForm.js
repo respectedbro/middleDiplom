@@ -44,7 +44,6 @@ export const applicationForm = ({elem = []}) => {
         const inputPhone = form.querySelector('.form-phone')
 
 
-
         inputName.addEventListener('input', (e) => {
             e.target.value = e.target.value.replace(/[^A-Za-zА-Яа-я\s]/g, '');
             validateInput(e.target)
@@ -68,7 +67,7 @@ export const applicationForm = ({elem = []}) => {
 
             elem.forEach(el => {
                 const element = document.getElementById(el.id)
-                if(element) {
+                if (element) {
                     if (el.type === 'input') {
                         formBody[el.id] = element.value
                     } else if (el.type === 'block') {

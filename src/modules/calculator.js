@@ -11,18 +11,18 @@ export const calculator = (price = 100) => {
 
     const countCalc = () => {
 
-            const calcTypeValue = +calcType.options[calcType.selectedIndex].value
-            const calcMaterialValue = +calcMaterial.options[calcMaterial.selectedIndex].value
-            let square = calcSquare.value
-            square = square.replace(/[^\d]/g, '')
+        const calcTypeValue = +calcType.options[calcType.selectedIndex].value
+        const calcMaterialValue = +calcMaterial.options[calcMaterial.selectedIndex].value
+        let square = calcSquare.value
+        square = square.replace(/[^\d]/g, '')
 
         let totalValue = 0
 
-            if (calcTypeValue && calcMaterialValue && square) {
-                totalValue = price * square * calcTypeValue * calcMaterialValue
-            } else {
-                totalValue = 0
-            }
+        if (calcTypeValue && calcMaterialValue && square) {
+            totalValue = price * square * calcTypeValue * calcMaterialValue
+        } else {
+            totalValue = 0
+        }
 
         total.value = totalValue
     }
