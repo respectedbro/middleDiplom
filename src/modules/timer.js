@@ -1,12 +1,14 @@
 export const timer = (deadline) => {
     const countdown = document.querySelectorAll('.countdown')
 
-    let timeout
+
     countdown.forEach(timer => {
         const timerDays = timer.querySelector('.count_1>span')
         const timerHours = timer.querySelector('.count_2>span')
         const timerMinutes = timer.querySelector('.count_3>span')
         const timerSeconds = timer.querySelector('.count_4>span')
+
+        let timeout
 
         const getTimeRemaining = () => {
             let dateStop = new Date(deadline).getTime()
@@ -41,12 +43,12 @@ export const timer = (deadline) => {
                 timerMinutes.textContent = '00'
                 timerSeconds.textContent = '00'
                 clearTimeout(timeout)
-
+                return
             }
             timeout = setTimeout(updateClock, 1000)
         }
 
         updateClock()
-
     })
+
 }
