@@ -2,22 +2,18 @@ export const applicationForm = ({elem = []}) => {
     const forms = document.querySelectorAll('.form-horizontal')
 
     const validate = (list) => {
-        let success = true
+        let success = true;
 
         list.forEach(input => {
-            if (!input.classList.contains('success')) {
+            if (input.value === '') {
+                input.classList.add('error')
+
                 success = false
+            } else {
+                input.classList.remove('error')
             }
         })
         return success
-    }
-
-    const validateInput = (input) => {
-        if (input.value !== '') {
-            input.classList.add('success');
-        } else {
-            input.classList.remove('success');
-        }
     }
 
     const sendData = (data) => {
@@ -46,12 +42,10 @@ export const applicationForm = ({elem = []}) => {
 
         inputName.addEventListener('input', (e) => {
             e.target.value = e.target.value.replace(/[^A-Za-zА-Яа-я\s]/g, '');
-            validateInput(e.target)
         })
 
         inputPhone.addEventListener('input', (e) => {
             e.target.value = e.target.value.replace(/[^0-9+]/g, '').substring(0, 17);
-            validateInput(e.target)
         })
 
         feedbackBtn.addEventListener('click', (e) => {
@@ -78,8 +72,6 @@ export const applicationForm = ({elem = []}) => {
             })
             if (validate(formElements)) {
                 sendData(formBody)
-            } else {
-                alert('Данные не заполнены')
             }
 
         })
