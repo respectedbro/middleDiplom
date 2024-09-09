@@ -5,7 +5,7 @@ export const applicationForm = ({elem = []}) => {
         let success = true;
 
         list.forEach(input => {
-            if (input.value === '') {
+            if (input.value.trim() === '') {
                 input.classList.add('error')
 
                 success = false
