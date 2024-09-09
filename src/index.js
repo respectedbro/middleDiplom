@@ -7,6 +7,7 @@ import {applicationForm} from "./modules/applicationForm";
 import {certificate} from "./modules/certificate";
 import {scrollTop} from "./modules/scrollTop";
 import {calculator} from "./modules/calculator";
+import {comments} from "./modules/comments";
 
 modalHeader()
 sliderCarousel()
@@ -24,3 +25,4 @@ applicationForm({
 certificate()
 scrollTop()
 calculator(100)
+comments()
