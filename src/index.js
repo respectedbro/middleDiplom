@@ -7,10 +7,8 @@ import {applicationForm} from "./modules/applicationForm";
 import {certificate} from "./modules/certificate";
 import {scrollTop} from "./modules/scrollTop";
 import {calculator} from "./modules/calculator";
-import {render} from "./modules/render";
-import {Comments} from "./modules/comments";
+import {updateComments} from "./modules/updateComments";
 
-window.comments = new Comments
 
 modalHeader()
 sliderCarousel()
@@ -28,4 +26,4 @@ applicationForm({
 certificate()
 scrollTop()
 calculator(100)
-render(comments.users)
+updateComments()
