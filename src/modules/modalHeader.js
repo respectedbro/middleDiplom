@@ -86,6 +86,7 @@ export const modalHeader = () => {
             statusBlock.textContent = successText
             statusBlock.style.color = 'green'
             sendData(formBody)
+            setTimeout(closeModal, 5000)
         } else {
             statusBlock.textContent = errorText
             statusBlock.style.color = 'red'

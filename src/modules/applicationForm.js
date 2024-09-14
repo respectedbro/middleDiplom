@@ -82,6 +82,12 @@ export const applicationForm = ({elem = []}) => {
                 statusBlock.textContent = successText
                 statusBlock.style.color = 'green'
                 sendData(formBody)
+                inputName.value = ''
+                inputPhone.value = ''
+                setTimeout(() => {
+                    statusBlock.textContent = ''
+
+                }, 5000);
             } else {
                 statusBlock.textContent = errorText
                 statusBlock.style.color = 'red'
