@@ -1,5 +1,9 @@
 export const applicationForm = ({elem = []}) => {
     const forms = document.querySelectorAll('.form-horizontal')
+    const statusBlock = document.createElement('div')
+    const loadText = 'Загрузка...'
+    const errorText = 'Ошибка валидации'
+    const successText = 'Спасибо, данные отправлены'
 
     const validate = (list) => {
         let success = true;
@@ -55,6 +59,10 @@ export const applicationForm = ({elem = []}) => {
             const formData = new FormData(form)
             const formBody = {}
 
+            statusBlock.textContent = loadText
+            statusBlock.style.textAlign = 'center'
+            form.append(statusBlock)
+
             formData.forEach((value, key) => {
                 formBody[key] = value
             })
@@ -71,7 +79,12 @@ export const applicationForm = ({elem = []}) => {
 
             })
             if (validate(formElements)) {
+                statusBlock.textContent = successText
+                statusBlock.style.color = 'green'
                 sendData(formBody)
+            } else {
+                statusBlock.textContent = errorText
+                statusBlock.style.color = 'red'
             }
 
         })

@@ -3,7 +3,7 @@ export const render = (users) => {
     const usersRender = users.comments.slice(0, 3)
 
     usersRender.forEach((user, index) => {
-        console.log(user)
+
         const imageSrc = user.image ? `./images/users/${user.image}` : './images/users/placeholder.png'
 
         commentsContainer.insertAdjacentHTML('beforeend', `

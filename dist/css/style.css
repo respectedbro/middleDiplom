@@ -1089,6 +1089,9 @@ p.services-image_mobile {
     animation:s1 1s infinite;
     margin-left: 40%;
 }
+
+
+
 @keyframes s1 {to{transform: rotate(.5turn)}}
 
 @-webkit-keyframes rotateInUpLeft {

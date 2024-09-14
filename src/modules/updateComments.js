@@ -1,4 +1,4 @@
-import { render } from './render'
+import {render} from './render'
 
 export const updateComments = () => {
     const commentsContainer = document.querySelector('.comments-container')
@@ -16,7 +16,7 @@ export const updateComments = () => {
             usersRender.push(comments[(startIndex + i) % comments.length])
         }
 
-        render({ comments: usersRender })
+        render({comments: usersRender})
     }
 
     const rotateComments = () => {

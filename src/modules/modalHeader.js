@@ -5,6 +5,7 @@ export const modalHeader = () => {
     const modal = document.querySelector('.header-modal')
     const overlay = document.querySelector('.overlay')
     const closeBtn = modal.querySelector('.header-modal__close')
+    const btn = modal.querySelector('.btn-warning')
 
 
     modal.style.opacity = 0
@@ -60,6 +61,10 @@ export const modalHeader = () => {
 
     callBtn.addEventListener('click', openModal)
     closeBtn.addEventListener('click', closeModal)
+
+    btn.addEventListener('click', (e) => {
+        e.preventDefault()
+    })
 
     overlay.addEventListener('click', (e) => {
         if (e.target.closest('.overlay')) {

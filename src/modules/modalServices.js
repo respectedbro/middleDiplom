@@ -5,6 +5,7 @@ export const modalServices = () => {
     const servicesBtn = document.querySelectorAll('.service-button')
     const overlay = document.querySelector('.overlay')
     const modalClose = document.querySelector('.services-modal__close')
+    const btnSuccess = modal.querySelector('.btn-success')
 
     modal.style.opacity = 0
     modal.style.visibility = 'hidden'
@@ -13,12 +14,12 @@ export const modalServices = () => {
     overlay.style.visibility = 'hidden'
 
     const animateOnModal = () => {
-        modal.style.display = 'block';
-        overlay.style.display = 'block';
+        modal.style.display = 'block'
+        overlay.style.display = 'block'
         animate({
             duration: 200,
             timing(timeFraction) {
-                return timeFraction;
+                return timeFraction
             },
             draw(progress) {
                 modal.style.opacity = progress
@@ -34,7 +35,7 @@ export const modalServices = () => {
         animate({
             duration: 200,
             timing(timeFraction) {
-                return timeFraction;
+                return timeFraction
             },
             draw(progress) {
                 modal.style.opacity = 1 - progress
@@ -63,13 +64,16 @@ export const modalServices = () => {
             openModal()
         })
     })
+
     modalClose.addEventListener('click', closeModal)
+
+    btnSuccess.addEventListener('click', (e) => {
+        e.preventDefault()
+    })
 
     overlay.addEventListener('click', (e) => {
         if (e.target.closest('.overlay')) {
             closeModal()
         }
     })
-
-
 }

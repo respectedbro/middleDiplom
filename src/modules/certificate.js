@@ -15,17 +15,17 @@ export const certificate = () => {
     overlay.append(modalImage)
 
     const animateOnModal = (elem) => {
-        elem.style.display = 'block';
+        elem.style.display = 'block'
         animate({
             duration: 200,
             timing(timeFraction) {
-                return timeFraction;
+                return timeFraction
             },
             draw(progress) {
                 elem.style.opacity = progress
                 elem.style.visibility = 'visible'
             }
-        });
+        })
     }
     certificateDocs.forEach(doc => {
         const documentOverlay = doc.querySelector('.document-overlay')
@@ -43,7 +43,7 @@ export const certificate = () => {
             const imageSrc = doc.getAttribute('href')
             modalImage.src = imageSrc
 
-            animateOnModal(overlay);
+            animateOnModal(overlay)
         })
     })
 }
