@@ -1,12 +1,19 @@
 import {animate} from "./helpers";
+import {sendData} from "./helpers";
+
 
 export const modalHeader = () => {
     const callBtn = document.querySelector('.button')
     const modal = document.querySelector('.header-modal')
     const overlay = document.querySelector('.overlay')
+    const modalForm = modal.querySelector('.header-form')
     const closeBtn = modal.querySelector('.header-modal__close')
     const btn = modal.querySelector('.btn-warning')
+    const loadText = 'Загрузка...'
+    const errorText = 'Ошибка валидации'
+    const successText = 'Спасибо, данные отправлены'
 
+    const statusBlock = document.createElement('div')
 
     modal.style.opacity = 0
     modal.style.visibility = 'hidden'
@@ -64,11 +71,32 @@ export const modalHeader = () => {
 
     btn.addEventListener('click', (e) => {
         e.preventDefault()
+        const formElements = modalForm.querySelectorAll('input')
+        const formData = new FormData(modalForm)
+        const formBody = {}
+
+        statusBlock.textContent = loadText
+        statusBlock.style.textAlign = 'center'
+        modalForm.append(statusBlock)
+
+        formData.forEach((value, key) => {
+            formBody[key] = value
+        })
+        if (formElements) {
+            statusBlock.textContent = successText
+            statusBlock.style.color = 'green'
+            sendData(formBody)
+        } else {
+            statusBlock.textContent = errorText
+            statusBlock.style.color = 'red'
+        }
+
     })
 
     overlay.addEventListener('click', (e) => {
         if (e.target.closest('.overlay')) {
             closeModal()
+
         }
     })
 }
